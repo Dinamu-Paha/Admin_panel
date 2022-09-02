@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'addAdmin.dart';
 
 import '../Components/colors.dart';
 
@@ -20,10 +23,13 @@ class _AdminDashPageState extends State<AdminDashPage> {
 
   LoadPage() {
     if (_page == 'Dashboard') {
-      return AdminDashPage();
+      return Container();
+    }
+    else if (_page == 'Add Admin') {
+      return AddAdmin();
     }
     else {
-      return AdminDashPage();
+      return Container();
     }
     // } else if (_page == 'Add Admin') {
     //   return OrderPage();
@@ -438,18 +444,21 @@ class _AdminDashPageState extends State<AdminDashPage> {
                             ),
                             SizedBox(
                               width: 20,
+                              
                             ),
+                            
                           ],
                         ),
                       ],
                     ),
                   ),
-                  // LoadPage(),
+                  LoadPage(),
                 ],
               ),
             )
           ],
         ),
+
       ),
     );
   }
@@ -477,4 +486,9 @@ Topic(var _topic) {
         style: TextStyle(color: AppColor.textDark, fontSize: 30),
       ));
 }
+
+
+
+  
+
 
