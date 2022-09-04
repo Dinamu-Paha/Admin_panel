@@ -8,6 +8,7 @@ class AppColor{
   static Color rejectColor = Color(0xFFF25D5D);
   static Color whiteFont = Color(0xFFFFFFFF);
   static Color blackFont = Color(0xFF000000);
+  static Color textBox = Color.fromARGB(0, 185, 253, 126);
 
 
 

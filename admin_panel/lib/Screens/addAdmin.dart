@@ -1,6 +1,15 @@
+// ignore_for_file: deprecated_member_use
+
+import 'dart:convert';
 import 'dart:html';
+import 'package:admin_panel/Components/text_field_container.dart';
+
 import '../Components/colors.dart';
 import 'package:flutter/material.dart';
+import '../Components/rounded_button.dart';
+import '../Components/rounded_email_field.dart';
+import '../Components/rounded_input_field.dart';
+import '../Components/rounded_mobile_filed.dart';
 import 'Screens/adminDashboardPage.dart';
 
 
@@ -11,11 +20,16 @@ class AddAdmin extends StatefulWidget{
 }
 
 class _AddAdminState extends State<AddAdmin>{
+ 
+
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style =
         ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
     // TODO: implement build
+  
+   
+   var size;
    return Container(
     width: MediaQuery.of(context).size.width-300,
     height: MediaQuery.of(context).size.height-100,
@@ -24,11 +38,11 @@ class _AddAdminState extends State<AddAdmin>{
         onTap: (){
           FocusScope.of(context).unfocus();
         },
-      
+
       child: ListView(
         children: [
-         
-          
+
+
           Center(
             child: Stack(
               children: [
@@ -39,7 +53,7 @@ class _AddAdminState extends State<AddAdmin>{
                     border: Border.all(
                       width: 4,
                       color:Theme.of(context).scaffoldBackgroundColor
-                      
+
                     ),
                     boxShadow: [
                       BoxShadow(
@@ -81,21 +95,45 @@ class _AddAdminState extends State<AddAdmin>{
           SizedBox(
              height: 35,
           ),
-          buildTextField("Full Name"),
+          RoundedInputField(
+            hintText: "First Name",
+            onChanged: (value) {},
+          ),
+          
+          RoundedMobileField(
+            onChanged: (value) {},
+          ),
+          RoundedEmailField(
+            onChanged: (value){},
+          ),
+          RoundedButton(
+            text: "ADD", 
+            press: (){},
+          ),
+          RoundedButton(
+            text: "CANCEL", 
+            color: Color.fromARGB(255, 220, 255, 181),
+            textColor: Colors.black,
+            press: (){},
+          ),
+           
+           
+          
+          /*buildTextField("Full Name"),
           buildTextField("Mobile Number"),
           buildTextField("Email"),
           buildTextField("Date of Birth"),
-          buildTextField("Gender"),
+          buildTextField("Gender"),*/
           SizedBox(
             height: 35,
           ),
-          
-          Row(
+
+          /*Row(
            mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           ElevatedButton(
             style: ButtonStyle(
-             
+
         padding:MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 50)) ,
         shape: MaterialStateProperty.all(RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
@@ -108,11 +146,11 @@ class _AddAdminState extends State<AddAdmin>{
               letterSpacing: 2.2,
               color: Colors.black),
             ),),
-          
-         
+
+
           ElevatedButton(
            style: ButtonStyle(
-             
+
         padding:MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 50)) ,
         shape: MaterialStateProperty.all(RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
@@ -127,24 +165,32 @@ class _AddAdminState extends State<AddAdmin>{
             ),
           ),
         ],
-          )
-        
-        
+          )*/
+
+
         ],
       ),
     ),
     );
   }
-  
- 
+
+
 
 }
 
+
+
+
+
+
+
+
+ /*Widget buildTextField(String labelText) {
   
- Widget buildTextField(String labelText) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 35.0),
-      child:TextField(
+      child: Material (
+        child:TextField(
       decoration: InputDecoration(
         contentPadding: EdgeInsets.only(bottom: 3),
         labelText: labelText,
@@ -152,12 +198,13 @@ class _AddAdminState extends State<AddAdmin>{
         hintStyle: TextStyle(
           fontSize: 16, fontWeight: FontWeight.bold,
           color: Colors.black,
-          
+
         )
       ),
     ),
+      )
     );
-    
-  }
-  
 
+  }*/
+
+  
