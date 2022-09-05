@@ -24,22 +24,38 @@ class _AddAdminState extends State<AddAdmin>{
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style =
-        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
+    
     // TODO: implement build
   
    
    var size;
    return Container(
-    width: MediaQuery.of(context).size.width-300,
+    alignment: Alignment.center,
+    
+   
+    width: MediaQuery.of(context).size.width -300,
     height: MediaQuery.of(context).size.height-100,
       padding: EdgeInsets.only(left: 16,top: 25,right: 16),
-      child: GestureDetector(
+      /**/
+      child: Container(
+        padding: EdgeInsets.all(20),
+        alignment: Alignment.center,
+        width: 500,
+        height: 600,
+        decoration: BoxDecoration(
+        
+        borderRadius: BorderRadius.circular(30),
+        
+        
+        
+      ),
+         child: GestureDetector(
         onTap: (){
           FocusScope.of(context).unfocus();
         },
 
       child: ListView(
+        
         children: [
 
 
@@ -119,58 +135,20 @@ class _AddAdminState extends State<AddAdmin>{
            
            
           
-          /*buildTextField("Full Name"),
-          buildTextField("Mobile Number"),
-          buildTextField("Email"),
-          buildTextField("Date of Birth"),
-          buildTextField("Gender"),*/
+       
           SizedBox(
             height: 35,
           ),
 
-          /*Row(
-           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          ElevatedButton(
-            style: ButtonStyle(
-
-        padding:MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 50)) ,
-        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ))
-            ),
-            onPressed: null,
-            child: const Text("CANCEL",
-            style: TextStyle(
-              fontSize: 14,
-              letterSpacing: 2.2,
-              color: Colors.black),
-            ),),
-
-
-          ElevatedButton(
-           style: ButtonStyle(
-
-        padding:MaterialStateProperty.all(const EdgeInsets.symmetric(horizontal: 50)) ,
-        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ))
-            ),
-            onPressed: null,
-            child: const Text("ADD",
-            style: TextStyle(
-              fontSize: 14,
-              letterSpacing: 2.2,
-              color: Colors.green),
-            ),
-          ),
-        ],
-          )*/
-
+         
 
         ],
       ),
     ),
+
+      ),
+      
+     
     );
   }
 
