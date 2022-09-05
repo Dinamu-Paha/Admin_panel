@@ -29,7 +29,10 @@ class _AddAdminState extends State<AddAdmin>{
   
    
    var size;
+   var child;
    return Container(
+
+//color: Colors.grey[300],
     alignment: Alignment.center,
     
    
@@ -38,13 +41,28 @@ class _AddAdminState extends State<AddAdmin>{
       padding: EdgeInsets.only(left: 16,top: 25,right: 16),
       /**/
       child: Container(
+        
         padding: EdgeInsets.all(20),
         alignment: Alignment.center,
-        width: 500,
+        width: 600,
         height: 600,
         decoration: BoxDecoration(
-        
-        borderRadius: BorderRadius.circular(30),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade500,
+            offset: Offset(4.0, 4.0),
+            blurRadius: 15.0,
+            spreadRadius: 1.0,
+          ),
+          BoxShadow(
+            color: Colors.white,
+            offset: Offset(-4.0, -4.0),
+            blurRadius: 15.0,
+            spreadRadius: 1.0,
+          )
+        ]
         
         
         
@@ -122,16 +140,7 @@ class _AddAdminState extends State<AddAdmin>{
           RoundedEmailField(
             onChanged: (value){},
           ),
-          RoundedButton(
-            text: "ADD", 
-            press: (){},
-          ),
-          RoundedButton(
-            text: "CANCEL", 
-            color: Color.fromARGB(255, 220, 255, 181),
-            textColor: Colors.black,
-            press: (){},
-          ),
+          
            
            
           
@@ -140,11 +149,28 @@ class _AddAdminState extends State<AddAdmin>{
             height: 35,
           ),
 
-         
+         Row(
+          children: [
+             RoundedButton(
+            text: "CANCEL", 
+            color: Color.fromARGB(255, 233, 238, 226),
+            textColor: Colors.black,
+            press: (){},
+          ),
+            RoundedButton(
+            text: "ADD", 
+            press: (){},
+          ),
+           
+
+          ],
+         )
 
         ],
       ),
     ),
+
+    
 
       ),
       
