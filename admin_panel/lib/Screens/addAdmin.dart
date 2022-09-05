@@ -51,7 +51,7 @@ class _AddAdminState extends State<AddAdmin>{
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.shade500,
+            color: Color.fromARGB(160, 158, 158, 158),
             offset: Offset(4.0, 4.0),
             blurRadius: 15.0,
             spreadRadius: 1.0,
