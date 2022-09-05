@@ -22,8 +22,8 @@ class RoundedButton extends StatelessWidget {
     // ignore: unused_local_variable
     
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      width: size.width * 0.8,
+      margin: EdgeInsets.symmetric(horizontal: 60),
+      width: size.width * 0.1,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
         child: FlatButton(
@@ -33,7 +33,9 @@ class RoundedButton extends StatelessWidget {
         
        child: Text(
         text,
-        style: TextStyle(color: AppColor.whiteFont),
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
         )
         ),
         ),
