@@ -10,7 +10,7 @@ import '../Components/rounded_button.dart';
 import '../Components/rounded_email_field.dart';
 import '../Components/rounded_input_field.dart';
 import '../Components/rounded_mobile_filed.dart';
-import 'Screens/adminDashboardPage.dart';
+import 'adminDashboardPage.dart';
 
 
 
