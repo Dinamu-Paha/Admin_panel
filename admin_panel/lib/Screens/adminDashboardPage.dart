@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'addAdmin.dart';
+import 'addQuestions.dart';
 
 import '../Components/colors.dart';
 
@@ -27,6 +28,9 @@ class _AdminDashPageState extends State<AdminDashPage> {
     }
     else if (_page == 'Add Admin') {
       return AddAdmin();
+    }
+    else if (_page == 'Questions'){
+      return AddQuestions();
     }
     else {
       return Container();
