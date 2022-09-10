@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:html';
 import 'dart:js';
+import 'package:admin_panel/Components/colors.dart';
 import 'package:flutter/material.dart';
 
 
@@ -10,6 +11,14 @@ class AddQuestions extends StatefulWidget{
 }
 
 class _AddQuestionsState extends State<AddQuestions>{
+  List<String> items = <String>[
+    'සිංහල',
+    'ගණිතය',
+    'බුද්ධ ධර්මය',
+    'ඉංග්‍රීසි',
+    'පරිසරය',
+  ];
+  
   @override
   Widget build(BuildContext context){
     return Container(
@@ -18,9 +27,13 @@ class _AddQuestionsState extends State<AddQuestions>{
       padding: EdgeInsets.only(left: 16,top: 25,right: 16),
 
        child: Container(
+        
+        
+
+        
          padding: EdgeInsets.all(20),
         alignment: Alignment.center,
-        width: 900,
+        width: 500,
         height: 700,
         decoration: BoxDecoration(
         color: Colors.white,
@@ -46,11 +59,20 @@ class _AddQuestionsState extends State<AddQuestions>{
          child: Scaffold(
          body: SingleChildScrollView(
             child: Container(
-              width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
+              //width: MediaQuery.of(context).size.width,
+              margin: EdgeInsets.fromLTRB(150, 0, 150, 0),
               child: Column(
                 children: [
-                  SizedBox(height: 40,),
+                  SizedBox(height: 40,
+                  ),
+                   TextField(
+                    
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Topic',
+                    ),
+                    style: TextStyle(fontFamily: 'Poppins', fontSize: 15),
+                   ),
                   TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
@@ -62,6 +84,7 @@ class _AddQuestionsState extends State<AddQuestions>{
                   ),
                   SizedBox(height: 20,),
                   Row(
+                    mainAxisAlignment:MainAxisAlignment.center,
                     children: [
                       Container(
                         margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
@@ -82,6 +105,8 @@ class _AddQuestionsState extends State<AddQuestions>{
                         ),
                       ),
                       Container(
+                        height: 250,
+                        width: 250,
                         //height: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         //width: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         decoration: BoxDecoration(
@@ -100,9 +125,12 @@ class _AddQuestionsState extends State<AddQuestions>{
                   ),
                   SizedBox(height: 20,),
                   Row(
+                     mainAxisAlignment:MainAxisAlignment.center,
                     children: [
                       Container(
                         margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                        height: 250,
+                        width: 250,
                         //height: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         //width: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         decoration: BoxDecoration(
@@ -118,6 +146,8 @@ class _AddQuestionsState extends State<AddQuestions>{
                         ),
                       ),
                       Container(
+                        height: 250,
+                        width: 250,
                         //height: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         //width: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         decoration: BoxDecoration(
@@ -145,7 +175,7 @@ class _AddQuestionsState extends State<AddQuestions>{
                     maxLines: 5,
                   ),
                   SizedBox(height: 30,),
-                  Text('Answers', style: TextStyle(color: Colors.black, fontFamily: 'Poppins', fontWeight: FontWeight.bold, fontSize: 22, fontStyle: FontStyle.italic),),
+                  Text('Answers', style: TextStyle(color: Colors.black, fontFamily: 'Poppins', fontWeight: FontWeight.bold, fontSize: 22, ),),
                   SizedBox(height: 20,),
                   TextField(
                     decoration: InputDecoration(
@@ -177,7 +207,7 @@ class _AddQuestionsState extends State<AddQuestions>{
                     maxLines: 5,
                   ),
                   SizedBox(height: 30,),
-                  Text('Correct Answer', style: TextStyle(color: Colors.black, fontFamily: 'Poppins', fontWeight: FontWeight.bold, fontSize: 22, fontStyle: FontStyle.italic),),
+                  Text('Correct Answer', style: TextStyle(color: Colors.black, fontFamily: 'Poppins', fontWeight: FontWeight.bold, fontSize: 22, ),),
                   SizedBox(height: 20,),
                   const TextField(
                     decoration: InputDecoration(
@@ -193,11 +223,12 @@ class _AddQuestionsState extends State<AddQuestions>{
                       // addQuestion();
                     },
                     child: Container(
-                      height: 50,
-                      width: MediaQuery.of(context).size.width-60,
-                      decoration: BoxDecoration(color: Colors.blue),
+                      height: 40,
+                      width: 170,
+                      //width: MediaQuery.of(context).size.width-0,
+                      decoration: BoxDecoration(color: AppColor.compColor),
                       child: Center(
-                          child: Text('Add Question', style: TextStyle(color: Colors.white, fontFamily: 'Poppins', fontSize: 25, fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),)
+                          child: Text('Add Question', style: TextStyle(color: Colors.black, fontFamily: 'Poppins', fontSize: 20, fontWeight: FontWeight.bold),)
                       ),
                     ),
                   ),
