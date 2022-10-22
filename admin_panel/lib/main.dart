@@ -1,6 +1,7 @@
 
 import 'package:admin_panel/Screens/addQuestionNew.dart';
 import 'package:admin_panel/Screens/addQuestions.dart';
+import 'package:admin_panel/Screens/test.dart';
 import 'package:flutter/material.dart';
 import 'Screens/adminDashboardPage.dart';
 import 'Screens/addAdmin.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         
       ),
-      home: addQuestionNew(),
+      home: AdminDashPage(),
     );
   }
 }

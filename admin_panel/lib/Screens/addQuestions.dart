@@ -11,6 +11,9 @@ class AddQuestions extends StatefulWidget{
 }
 
 class _AddQuestionsState extends State<AddQuestions>{
+
+  String dropdownvalue = 'සිංහල';
+
   List<String> items = <String>[
     'සිංහල',
     'ගණිතය',
@@ -27,11 +30,7 @@ class _AddQuestionsState extends State<AddQuestions>{
       padding: EdgeInsets.only(left: 16,top: 25,right: 16),
 
        child: Container(
-        
-        
-
-        
-         padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(20),
         alignment: Alignment.center,
         width: 500,
         height: 700,
@@ -63,37 +62,224 @@ class _AddQuestionsState extends State<AddQuestions>{
               margin: EdgeInsets.fromLTRB(150, 0, 150, 0),
               child: Column(
                 children: [
-                  SizedBox(height: 40,
-                  ),
-                   TextField(
-                    
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Topic',
-                    ),
-                    style: TextStyle(fontFamily: 'Poppins', fontSize: 15),
-                   ),
-                  TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Prescription',
-                    ),
-                    style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
-                    minLines: 1,
-                    maxLines: 5,
+                  SizedBox(height: 40,),
+                  Row(
+                    children: [
+                      Container(
+                        width: (MediaQuery.of(context).size.width-300)/4,
+                        padding: EdgeInsets.fromLTRB(15, 0, 10, 0),
+                        decoration: BoxDecoration(
+                          //border: Border.all(width: 0.4),
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.white,
+                          boxShadow: [BoxShadow(
+                            color: Colors.grey,
+                            offset: const Offset(
+                              2.0,
+                              2.0,
+                            ),
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
+                            BoxShadow(
+                              color: Colors.white,
+                              offset: const Offset(0.0, 0.0),
+                              blurRadius: 0.0,
+                              spreadRadius: 0.0,
+                            ),],
+                        ),
+
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton(
+                            // Initial Value
+                            value: dropdownvalue,
+
+                            // Down Arrow Icon
+                            icon: const Icon(Icons.keyboard_arrow_down),
+
+                            // Array list of items
+                            items: items.map((String items) {
+                              return DropdownMenuItem(
+                                value: items,
+                                child: Text(items,),
+                              );
+                            }).toList(),
+                            // After selecting the desired option,it will
+                            // change button value to selected value
+                            onChanged: (String? newValue) {
+                              setState(() {
+                                dropdownvalue = newValue!;
+                              });
+                            },
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 30,),
+                      Container(
+                        width: (MediaQuery.of(context).size.width-300)/3,
+                        padding: EdgeInsets.fromLTRB(15, 0, 10, 0),
+                        decoration: BoxDecoration(
+                          //border: Border.all(width: 0.4),
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.white,
+                          boxShadow: [BoxShadow(
+                            color: Colors.grey,
+                            offset: const Offset(
+                              2.0,
+                              2.0,
+                            ),
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
+                            BoxShadow(
+                              color: Colors.white,
+                              offset: const Offset(0.0, 0.0),
+                              blurRadius: 0.0,
+                              spreadRadius: 0.0,
+                            ),],
+                        ),
+
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton(
+                            // Initial Value
+                            value: dropdownvalue,
+
+                            // Down Arrow Icon
+                            icon: const Icon(Icons.keyboard_arrow_down),
+
+                            // Array list of items
+                            items: items.map((String items) {
+                              return DropdownMenuItem(
+                                value: items,
+                                child: Text(items,),
+                              );
+                            }).toList(),
+                            // After selecting the desired option,it will
+                            // change button value to selected value
+                            onChanged: (String? newValue) {
+                              setState(() {
+                                dropdownvalue = newValue!;
+                              });
+                            },
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(height: 20,),
+                  Container(
+                    width: MediaQuery.of(context).size.width-300,
+                    padding: EdgeInsets.fromLTRB(15, 0, 10, 0),
+                    decoration: BoxDecoration(
+                      //border: Border.all(width: 0.4),
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.white,
+                      boxShadow: [BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(
+                          2.0,
+                          2.0,
+                        ),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ),],
+                    ),
+
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton(
+                        // Initial Value
+                        value: dropdownvalue,
+
+                        // Down Arrow Icon
+                        icon: const Icon(Icons.keyboard_arrow_down),
+
+                        // Array list of items
+                        items: items.map((String items) {
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Text(items,),
+                          );
+                        }).toList(),
+                        // After selecting the desired option,it will
+                        // change button value to selected value
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            dropdownvalue = newValue!;
+                          });
+                        },
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  Container(
+                    width: MediaQuery.of(context).size.width-300,
+                    decoration: BoxDecoration(
+                      //border: Border.all(width: 0.4),
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.white,
+                      boxShadow: [BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(
+                          2.0,
+                          2.0,
+                        ),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ),],
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Prescription',
+                      ),
+                      style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
+                      minLines: 1,
+                      maxLines: 5,
+                    ),
+                  ),
+                  SizedBox(height: 40,),
                   Row(
                     mainAxisAlignment:MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
                         margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
                         height: 250,
                         width: 250,
+                        padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
                         //height: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         //width: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black, width: 1)
+                          //border: Border.all(width: 0.4),
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.white,
+                          boxShadow: [BoxShadow(
+                            color: Colors.grey,
+                            offset: const Offset(
+                              2.0,
+                              2.0,
+                            ),
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
+                            BoxShadow(
+                              color: Colors.white,
+                              offset: const Offset(0.0, 0.0),
+                              blurRadius: 0.0,
+                              spreadRadius: 0.0,
+                            ),],
                         ),
                         child: Center(
                           child: Row(
@@ -105,12 +291,31 @@ class _AddQuestionsState extends State<AddQuestions>{
                         ),
                       ),
                       Container(
+                        margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
                         height: 250,
                         width: 250,
+                        padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
                         //height: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         //width: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: 1)
+                          //border: Border.all(width: 0.4),
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.white,
+                          boxShadow: [BoxShadow(
+                            color: Colors.grey,
+                            offset: const Offset(
+                              2.0,
+                              2.0,
+                            ),
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
+                            BoxShadow(
+                              color: Colors.white,
+                              offset: const Offset(0.0, 0.0),
+                              blurRadius: 0.0,
+                              spreadRadius: 0.0,
+                            ),],
                         ),
                         child: Center(
                           child: Row(
@@ -131,10 +336,28 @@ class _AddQuestionsState extends State<AddQuestions>{
                         margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
                         height: 250,
                         width: 250,
+                        padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
                         //height: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         //width: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: 1)
+                          //border: Border.all(width: 0.4),
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.white,
+                          boxShadow: [BoxShadow(
+                            color: Colors.grey,
+                            offset: const Offset(
+                              2.0,
+                              2.0,
+                            ),
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
+                            BoxShadow(
+                              color: Colors.white,
+                              offset: const Offset(0.0, 0.0),
+                              blurRadius: 0.0,
+                              spreadRadius: 0.0,
+                            ),],
                         ),
                         child: Center(
                           child: Row(
@@ -146,12 +369,31 @@ class _AddQuestionsState extends State<AddQuestions>{
                         ),
                       ),
                       Container(
+                        margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
                         height: 250,
                         width: 250,
+                        padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
                         //height: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         //width: MediaQuery.of(context).size.width-(40+(MediaQuery.of(context).size.width)/2),
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: 1)
+                          //border: Border.all(width: 0.4),
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.white,
+                          boxShadow: [BoxShadow(
+                            color: Colors.grey,
+                            offset: const Offset(
+                              2.0,
+                              2.0,
+                            ),
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
+                            BoxShadow(
+                              color: Colors.white,
+                              offset: const Offset(0.0, 0.0),
+                              blurRadius: 0.0,
+                              spreadRadius: 0.0,
+                            ),],
                         ),
                         child: Center(
                           child: Row(
@@ -164,58 +406,212 @@ class _AddQuestionsState extends State<AddQuestions>{
                       ),
                     ],
                   ),
-                  SizedBox(height: 20,),
-                  TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Postcription',
+                  SizedBox(height: 40,),
+                  Container(
+                    decoration: BoxDecoration(
+                      //border: Border.all(width: 0.4),
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.white,
+                      boxShadow: [BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(
+                          2.0,
+                          2.0,
+                        ),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ),],
                     ),
-                    style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
-                    minLines: 1,
-                    maxLines: 5,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Postcription',
+                      ),
+                      style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
+                      minLines: 1,
+                      maxLines: 5,
+                    ),
                   ),
                   SizedBox(height: 30,),
                   Text('Answers', style: TextStyle(color: Colors.black, fontFamily: 'Poppins', fontWeight: FontWeight.bold, fontSize: 22, ),),
                   SizedBox(height: 20,),
-                  TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: '1. Answer',
+                  Container(
+                    decoration: BoxDecoration(
+                      //border: Border.all(width: 0.4),
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.white,
+                      boxShadow: [BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(
+                          2.0,
+                          2.0,
+                        ),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ),],
                     ),
-                    style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
-                    minLines: 1,
-                    maxLines: 5,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        //border: Border.all(width: 0.4),
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.white,
+                        boxShadow: [BoxShadow(
+                          color: Colors.grey,
+                          offset: const Offset(
+                            2.0,
+                            2.0,
+                          ),
+                          blurRadius: 10.0,
+                          spreadRadius: 2.0,
+                        ), //BoxShadow
+                          BoxShadow(
+                            color: Colors.white,
+                            offset: const Offset(0.0, 0.0),
+                            blurRadius: 0.0,
+                            spreadRadius: 0.0,
+                          ),],
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          //border: Border.all(width: 0.4),
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.white,
+                          boxShadow: [BoxShadow(
+                            color: Colors.grey,
+                            offset: const Offset(
+                              2.0,
+                              2.0,
+                            ),
+                            blurRadius: 10.0,
+                            spreadRadius: 2.0,
+                          ), //BoxShadow
+                            BoxShadow(
+                              color: Colors.white,
+                              offset: const Offset(0.0, 0.0),
+                              blurRadius: 0.0,
+                              spreadRadius: 0.0,
+                            ),],
+                        ),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: '1. Answer',
+                          ),
+                          style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
+                          minLines: 1,
+                          maxLines: 5,
+                        ),
+                      ),
+                    ),
                   ),
                   SizedBox(height: 20,),
-                  TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: '2. Answer',
+                  Container(
+                    decoration: BoxDecoration(
+                      //border: Border.all(width: 0.4),
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.white,
+                      boxShadow: [BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(
+                          2.0,
+                          2.0,
+                        ),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ),],
                     ),
-                    style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
-                    minLines: 1,
-                    maxLines: 5,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: '2. Answer',
+                      ),
+                      style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
+                      minLines: 1,
+                      maxLines: 5,
+                    ),
                   ),
                   SizedBox(height: 20,),
-                  TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: '3. Answer',
+                  Container(
+                    decoration: BoxDecoration(
+                      //border: Border.all(width: 0.4),
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.white,
+                      boxShadow: [BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(
+                          2.0,
+                          2.0,
+                        ),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ),],
                     ),
-                    style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
-                    minLines: 1,
-                    maxLines: 5,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: '3. Answer',
+                      ),
+                      style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
+                      minLines: 1,
+                      maxLines: 5,
+                    ),
                   ),
                   SizedBox(height: 30,),
                   Text('Correct Answer', style: TextStyle(color: Colors.black, fontFamily: 'Poppins', fontWeight: FontWeight.bold, fontSize: 22, ),),
                   SizedBox(height: 20,),
-                  const TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Number of the CORRECT ANSWER',
+                  Container(
+                    decoration: BoxDecoration(
+                      //border: Border.all(width: 0.4),
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.white,
+                      boxShadow: [BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(
+                          2.0,
+                          2.0,
+                        ),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ),],
                     ),
-                    keyboardType: TextInputType.number,
-                    style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
+                    child: const TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Number of the CORRECT ANSWER',
+                      ),
+                      keyboardType: TextInputType.number,
+                      style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
+                    ),
                   ),
                   SizedBox(height: 50,),
                   GestureDetector(
@@ -223,10 +619,13 @@ class _AddQuestionsState extends State<AddQuestions>{
                       // addQuestion();
                     },
                     child: Container(
-                      height: 40,
-                      width: 170,
+                      height: 50,
+                      width: 180,
                       //width: MediaQuery.of(context).size.width-0,
-                      decoration: BoxDecoration(color: AppColor.compColor),
+                      decoration: BoxDecoration(
+                        color: AppColor.compColor,
+                        borderRadius: BorderRadius.circular(5)
+                      ),
                       child: Center(
                           child: Text('Add Question', style: TextStyle(color: Colors.black, fontFamily: 'Poppins', fontSize: 20, fontWeight: FontWeight.bold),)
                       ),

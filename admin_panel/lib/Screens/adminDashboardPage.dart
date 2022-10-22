@@ -1,5 +1,6 @@
 import 'dart:html';
 
+import 'package:admin_panel/Screens/questions.dart';
 import 'package:flutter/material.dart';
 import 'addAdmin.dart';
 import 'addQuestions.dart';
@@ -30,7 +31,7 @@ class _AdminDashPageState extends State<AdminDashPage> {
       return AddAdmin();
     }
     else if (_page == 'Questions'){
-      return AddQuestions();
+      return Questions();
     }
     else {
       return Container();
