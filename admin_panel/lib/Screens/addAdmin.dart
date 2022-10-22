@@ -30,7 +30,12 @@ class _AddAdminState extends State<AddAdmin>{
    
    var size;
    var child;
-   return Container(
+  return  Container(
+   // ignore: unnecessary_new
+  
+   child: Container(
+
+    
 
 //color: Colors.grey[300],
     alignment: Alignment.center,
@@ -175,7 +180,10 @@ class _AddAdminState extends State<AddAdmin>{
       ),
       
      
+    )
     );
+  
+   
   }
 
 
@@ -189,26 +197,26 @@ class _AddAdminState extends State<AddAdmin>{
 
 
 
- /*Widget buildTextField(String labelText) {
+//  Widget buildTextField(String labelText) {
   
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 35.0),
-      child: Material (
-        child:TextField(
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.only(bottom: 3),
-        labelText: labelText,
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        hintStyle: TextStyle(
-          fontSize: 16, fontWeight: FontWeight.bold,
-          color: Colors.black,
+//     return Padding(
+//       padding: const EdgeInsets.only(bottom: 35.0),
+//       child: Material (
+//         child:TextField(
+//       decoration: InputDecoration(
+//         contentPadding: EdgeInsets.only(bottom: 3),
+//         labelText: labelText,
+//         floatingLabelBehavior: FloatingLabelBehavior.always,
+//         hintStyle: TextStyle(
+//           fontSize: 16, fontWeight: FontWeight.bold,
+//           color: Colors.black,
 
-        )
-      ),
-    ),
-      )
-    );
+//         )
+//       ),
+//     ),
+//       )
+//     );
 
-  }*/
+//   }
 
   
