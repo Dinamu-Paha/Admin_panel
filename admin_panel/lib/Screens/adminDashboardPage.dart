@@ -1,13 +1,14 @@
 import 'dart:html';
 
-import 'package:admin_panel/Screens/Quiz.dart';
-import 'package:admin_panel/Screens/create_quiz.dart';
+import 'package:admin_panel/Screens/lessons.dart';
 import 'package:admin_panel/Screens/questions.dart';
 import 'package:flutter/material.dart';
 import 'addAdmin.dart';
 import 'addQuestions.dart';
 
+
 import '../Components/colors.dart';
+import 'create_quiz.dart';
 
 var _page = 'Dashboard';
 
@@ -38,6 +39,10 @@ class _AdminDashPageState extends State<AdminDashPage> {
     else if (_page == 'Quizzers'){
       return Create_Quiz();
     }
+    else if (_page == 'Lessons'){
+      return Lessons();
+    }
+    
     else {
       return Container();
     }
