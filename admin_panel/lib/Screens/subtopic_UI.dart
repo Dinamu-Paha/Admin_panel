@@ -88,7 +88,7 @@ alignment: Alignment.center,
                   Container(
                     width: MediaQuery.of(context).size.width,
                     padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
-                    height: MediaQuery.of(context).size.height +25,
+                    height: MediaQuery.of(context).size.height +50,
                     decoration: BoxDecoration(
                       //color: Colors.cyanAccent.withOpacity(0.3),
                     ),
@@ -106,26 +106,35 @@ alignment: Alignment.center,
                             child: Column(
                              
                               children: [
+                              
                                
-                                 GestureDetector(
-                            child: Container(
-                             alignment: Alignment.center,
-                               width: 120,
-                               height:30,
-                                margin: EdgeInsets.fromLTRB(40, 0, 40, 30),
-                                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.purpleAccent.withOpacity(0.8),),
-                                 
-                                  child:Row(
-                                 
-                                 mainAxisAlignment: MainAxisAlignment.center,
-                                 children: [
-                                    Text("Add Topic",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,),)
-                                  ],
+                           Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
 
-                                 )
-                             
-                            ),
+                             children: [
+                               GestureDetector(
+                                child: Container(
+                                 alignment: Alignment.center,
+                                   width: 120,
+                                   height:30,
+                                    margin: EdgeInsets.fromLTRB(40, 0,0, 30),
+                                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.purpleAccent.withOpacity(0.8),),
+                                     
+                                      child:Row(
+                                     
+                                     mainAxisAlignment: MainAxisAlignment.center,
+                                     children: [
+                                        Text("Add Topic",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,),)
+                                      ],
+
+                                     )
+                                 
+                                ),
+                                
               ),
+               SizedBox(width: 30,),
+                             ],
+                           ),
                                 Container(
                                   width: 535,
                                   height: 50,
