@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'adminDashboardPage.dart';
-import '../Components/subject_card.dart';
+
 import 'subtopic_UI.dart';
 
 
@@ -25,7 +25,11 @@ class _LessonsState extends State<Lessons>{
 
  
   var sub_name1 = "සිංහල";
+  var sub_name2 = "ගණිතය";
+  var sub_name3 = "ඉංග්‍රීසි";
   var sub_name4 = "පරිසරය";
+  var sub_name5 = "බුද්ධ ධර්මය";
+
 
   // List subject = [
   //   'සිංහල',

@@ -1,8 +1,10 @@
 import 'dart:html';
 
+import 'package:admin_panel/Screens/lessons.dart';
 import 'package:flutter/material.dart';
 import 'addAdmin.dart';
 import 'addQuestions.dart';
+
 
 import '../Components/colors.dart';
 
@@ -32,6 +34,10 @@ class _AdminDashPageState extends State<AdminDashPage> {
     else if (_page == 'Questions'){
       return AddQuestions();
     }
+    else if (_page == 'Lessons'){
+      return Lessons();
+    }
+    
     else {
       return Container();
     }
