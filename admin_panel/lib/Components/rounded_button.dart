@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
@@ -26,19 +26,27 @@ class RoundedButton extends StatelessWidget {
       width: size.width * 0.1,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
-         child: FlatButton(
-         padding:  EdgeInsets.symmetric(vertical: 20,horizontal: 40),
-         color:color,
-         onPressed: press,
-       
-        child: Text(
-         text,
-         style: TextStyle(
-           fontWeight: FontWeight.bold,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.lightGreen,
+ padding:  EdgeInsets.symmetric(vertical: 20,horizontal: 40),
+        
+          ),
+       //color:color,
+        onPressed: press,
+        
+       child: Text(
+        text,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
         ),
-         )
-         ),
+        )
+        ),
         ),
     );
   }
+  
+  
 }
+
+
