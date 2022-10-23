@@ -613,6 +613,40 @@ class _AddQuestionsState extends State<AddQuestions>{
                       style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
                     ),
                   ),
+                  SizedBox(height: 30,),
+                  Text('Review of question', style: TextStyle(color: Colors.black, fontFamily: 'Poppins', fontWeight: FontWeight.bold, fontSize: 22, ),),
+                  SizedBox(height: 20,),
+                  Container(
+                    decoration: BoxDecoration(
+                      //border: Border.all(width: 0.4),
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.white,
+                      boxShadow: [BoxShadow(
+                        color: Colors.grey,
+                        offset: const Offset(
+                          2.0,
+                          2.0,
+                        ),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0,
+                      ), //BoxShadow
+                        BoxShadow(
+                          color: Colors.white,
+                          offset: const Offset(0.0, 0.0),
+                          blurRadius: 0.0,
+                          spreadRadius: 0.0,
+                        ),],
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Review',
+                      ),
+                      style: TextStyle(fontFamily: 'Poppins', fontSize: 18),
+                      minLines: 1,
+                      maxLines: 5,
+                    ),
+                  ),
                   SizedBox(height: 50,),
                   GestureDetector(
                     onTap: (){
