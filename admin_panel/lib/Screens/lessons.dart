@@ -76,6 +76,7 @@ alignment: Alignment.center,
           )
         ]
       ),
+      //Added subject list
         child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Container(
