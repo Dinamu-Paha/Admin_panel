@@ -23,7 +23,7 @@ class _LessonsState extends State<Lessons>{
   //   Colors.lightGreenAccent.withOpacity(0.8)
   // ];
 
- 
+ //Assign names to subject variables
   var sub_name1 = "සිංහල";
   var sub_name2 = "ගණිතය";
   var sub_name3 = "ඉංග්‍රීසි";
