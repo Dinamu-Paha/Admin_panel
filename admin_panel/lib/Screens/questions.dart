@@ -3,6 +3,7 @@ import 'dart:html';
 import 'dart:js';
 import 'package:admin_panel/Components/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class Questions extends StatefulWidget {
   const Questions({Key? key}) : super(key: key);
@@ -13,15 +14,34 @@ class Questions extends StatefulWidget {
 
 class _QuestionsState extends State<Questions> {
 
-  String dropdownvalue = 'සිංහල';
+  String dropdownvalue = 'Subject';
+  String dropdownvalue2 = 'SubTopic';
 
   List<String> items = <String>[
+    'Subject',
     'සිංහල',
     'ගණිතය',
     'බුද්ධ ධර්මය',
     'ඉංග්‍රීසි',
     'පරිසරය',
   ];
+
+  List<String> items1 = <String>[
+    'SubTopic',
+  ];
+
+  Future <List<dynamic>> getSubtopics(sub_id)async {
+
+    print('object');
+      final res = await http.get(
+          Uri.parse("http://192.168.43.90:8080/getquestion")
+        // headers: {'Content-Type': 'application/json'}
+      );
+
+      List<dynamic> responsejson = json.decode(utf8.decode(res.bodyBytes));
+      print(responsejson);
+      return responsejson;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +83,7 @@ class _QuestionsState extends State<Questions> {
                     Row(
                       children: [
                         Container(
-                          width: (MediaQuery.of(context).size.width-300)/4,
+                          width: (MediaQuery.of(context).size.width-300)/5,
                           padding: EdgeInsets.fromLTRB(15, 0, 10, 0),
                           decoration: BoxDecoration(
                             //border: Border.all(width: 0.4),
@@ -111,7 +131,7 @@ class _QuestionsState extends State<Questions> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 92,),
+                        SizedBox(width: 85,),
                         Container(
                           width: (MediaQuery.of(context).size.width-300)/3,
                           padding: EdgeInsets.fromLTRB(15, 0, 10, 0),
@@ -139,13 +159,13 @@ class _QuestionsState extends State<Questions> {
                           child: DropdownButtonHideUnderline(
                             child: DropdownButton(
                               // Initial Value
-                              value: dropdownvalue,
+                              value: dropdownvalue2,
 
                               // Down Arrow Icon
                               icon: const Icon(Icons.keyboard_arrow_down),
 
                               // Array list of items
-                              items: items.map((String items) {
+                              items: items1.map((String items) {
                                 return DropdownMenuItem(
                                   value: items,
                                   child: Text(items,),
@@ -155,63 +175,13 @@ class _QuestionsState extends State<Questions> {
                               // change button value to selected value
                               onChanged: (String? newValue) {
                                 setState(() {
-                                  dropdownvalue = newValue!;
+                                  dropdownvalue2 = newValue!;
                                 });
                               },
                             ),
                           ),
                         ),
                       ],
-                    ),
-                    SizedBox(height: 20,),
-                    Container(
-                      width: MediaQuery.of(context).size.width-300,
-                      padding: EdgeInsets.fromLTRB(15, 0, 10, 0),
-                      decoration: BoxDecoration(
-                        //border: Border.all(width: 0.4),
-                        borderRadius: BorderRadius.circular(5),
-                        color: Colors.white,
-                        boxShadow: [BoxShadow(
-                          color: Colors.grey,
-                          offset: const Offset(
-                            2.0,
-                            2.0,
-                          ),
-                          blurRadius: 10.0,
-                          spreadRadius: 2.0,
-                        ), //BoxShadow
-                          BoxShadow(
-                            color: Colors.white,
-                            offset: const Offset(0.0, 0.0),
-                            blurRadius: 0.0,
-                            spreadRadius: 0.0,
-                          ),],
-                      ),
-
-                      child: DropdownButtonHideUnderline(
-                        child: DropdownButton(
-                          // Initial Value
-                          value: dropdownvalue,
-
-                          // Down Arrow Icon
-                          icon: const Icon(Icons.keyboard_arrow_down),
-
-                          // Array list of items
-                          items: items.map((String items) {
-                            return DropdownMenuItem(
-                              value: items,
-                              child: Text(items,),
-                            );
-                          }).toList(),
-                          // After selecting the desired option,it will
-                          // change button value to selected value
-                          onChanged: (String? newValue) {
-                            setState(() {
-                              dropdownvalue = newValue!;
-                            });
-                          },
-                        ),
-                      ),
                     ),
                     SizedBox(height: 50,),
                     Container(

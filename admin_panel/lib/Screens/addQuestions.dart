@@ -114,9 +114,9 @@ class _AddQuestionsState extends State<AddQuestions>{
                           ),
                         ),
                       ),
-                      SizedBox(width: 30,),
+                      SizedBox(width: 20,),
                       Container(
-                        width: (MediaQuery.of(context).size.width-300)/3,
+                        width: (MediaQuery.of(context).size.width)/3,
                         padding: EdgeInsets.fromLTRB(15, 0, 10, 0),
                         decoration: BoxDecoration(
                           //border: Border.all(width: 0.4),

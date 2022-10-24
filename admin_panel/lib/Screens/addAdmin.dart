@@ -2,6 +2,9 @@
 
 import 'dart:convert';
 import 'dart:html';
+import 'package:admin_panel/Components/rounded_address_field.dart';
+import 'package:admin_panel/Components/rounded_age_field.dart';
+import 'package:admin_panel/Components/rounded_lname_field.dart';
 import 'package:admin_panel/Components/text_field_container.dart';
 
 import '../Components/colors.dart';
@@ -138,10 +141,17 @@ class _AddAdminState extends State<AddAdmin>{
             hintText: "First Name",
             onChanged: (value) {},
           ),
-          
+
+          RoundedLnameField(
+              onChanged: (value){}
+          ),
+
+          RoundedAgeField(onChanged: (value){}),
+
           RoundedMobileField(
             onChanged: (value) {},
           ),
+          RoundedAddressField(onChanged: (value){}),
           RoundedEmailField(
             onChanged: (value){},
           ),
