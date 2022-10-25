@@ -106,59 +106,59 @@ class _QuestionsState extends State<Questions> {
                               ),],
                           ),
 
-                          child:
-                          FutureBuilder<List<dynamic>>(
-                            future: getSubjectsAndSubtopics(),
-                            builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot ){
-                                int? subjectLen = snapshot.data?.length;
-
-                               // print(subjects);
-                              if(snapshot.hasData){
-
-                                return DropdownButtonHideUnderline(
-                                  child: DropdownButton(
-                                    // Initial Value
-                                    value: dropdownvalue,
-
-                                    // Down Arrow Icon
-                                    icon: const Icon(Icons.keyboard_arrow_down),
-
-                                    // Array list of items
-                                    items: subjects.map((String items) {
-                                      // print(subjects);
-                                      return DropdownMenuItem(
-                                        value: items,
-                                        child: Text(items,),
-                                      );
-                                    }).toList(),
-
-                                    // After selecting the desired option,it will
-                                    // change button value to selected value
-                                    onChanged: (newValue) {
-                                      print(newValue);
-                                      print(subjects);
-                                      for(var i = 0 ; i < subjectLen! ; i++){
-                                        if(newValue == snapshot.data?[i]["subject"]){
-                                          subjectIndex = i;
-                                        }
-                                      }
-                                      int Id = snapshot.data?[subjectIndex]["subjectId"];
-                                      // print(subjectId);
-                                      setState(() {
-                                        subjectId = Id;
-                                        dropdownvalue = newValue!.toString();
-                                      });
-                                    },
-                                  ),
-                                );
-                              }
-                              else{
-                                return Container(
-                                  child: Text("Loading"),
-                                );
-                              }
-                            }
-                          )
+                          // child:
+                          // FutureBuilder<List<dynamic>>(
+                          //   future: getSubjectsAndSubtopics(),
+                          //   builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot ){
+                          //       int? subjectLen = snapshot.data?.length;
+                          //
+                          //      // print(subjects);
+                          //     if(snapshot.hasData){
+                          //
+                          //       return DropdownButtonHideUnderline(
+                          //         child: DropdownButton(
+                          //           // Initial Value
+                          //           value: dropdownvalue,
+                          //
+                          //           // Down Arrow Icon
+                          //           icon: const Icon(Icons.keyboard_arrow_down),
+                          //
+                          //           // Array list of items
+                          //           items: subjects.map((String items) {
+                          //             // print(subjects);
+                          //             return DropdownMenuItem(
+                          //               value: items,
+                          //               child: Text(items,),
+                          //             );
+                          //           }).toList(),
+                          //
+                          //           // After selecting the desired option,it will
+                          //           // change button value to selected value
+                          //           onChanged: (newValue) {
+                          //             print(newValue);
+                          //             print(subjects);
+                          //             for(var i = 0 ; i < subjectLen! ; i++){
+                          //               if(newValue == snapshot.data?[i]["subject"]){
+                          //                 subjectIndex = i;
+                          //               }
+                          //             }
+                          //             int Id = snapshot.data?[subjectIndex]["subjectId"];
+                          //             // print(subjectId);
+                          //             setState(() {
+                          //               subjectId = Id;
+                          //               dropdownvalue = newValue!.toString();
+                          //             });
+                          //           },
+                          //         ),
+                          //       );
+                          //     }
+                          //     else{
+                          //       return Container(
+                          //         child: Text("Loading"),
+                          //       );
+                          //     }
+                          //   }
+                          // )
 
                         ),
                         SizedBox(width: 85,),
