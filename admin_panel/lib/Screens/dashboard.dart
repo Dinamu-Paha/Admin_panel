@@ -190,7 +190,6 @@ class _AdminDashState extends State<AdminDash>{
                       
                    ), 
                   ),
-<<<<<<< HEAD
                   SizedBox(
                    width: 300.0,
                    height: 130.0,
@@ -236,14 +235,6 @@ class _AdminDashState extends State<AdminDash>{
                     ),
                       
                    ), 
-=======
-                  child: Center(
-
-                      child: Text("Questions", style: TextStyle(fontFamily: 'Poppins', fontSize: 40, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),)
-
-                      // child: Text("Students", style: TextStyle(fontFamily: 'Poppins', fontSize: 40, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),)
-
->>>>>>> 98daa5668eb13fc4a48f0daa3616f05b90993a32
                   ),
                    
                   // SizedBox(
