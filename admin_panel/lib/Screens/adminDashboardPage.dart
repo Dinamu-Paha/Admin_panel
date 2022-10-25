@@ -9,7 +9,7 @@ import 'addQuestions.dart';
 
 
 import '../Components/colors.dart';
-import 'create_quiz.dart';
+import 'dashboard.dart';
 
 var _page = 'Dashboard';
 
