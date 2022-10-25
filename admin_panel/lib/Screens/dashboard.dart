@@ -288,7 +288,7 @@ class _AdminDashState extends State<AdminDash>{
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Image.asset("assets/images/beauty.png", width: 70.0,),
+                        Image.asset("images/beauty.png", width: 70.0,),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
