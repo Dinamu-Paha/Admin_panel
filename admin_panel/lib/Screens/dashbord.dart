@@ -175,7 +175,7 @@ class _AdminDashState extends State<AdminDash>{
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
-            color: Color.fromARGB(160, 158, 158, 158),
+            color: Color.fromARGB(160, 157, 158, 158),
             offset: Offset(4.0, 4.0),
             blurRadius: 15.0,
             spreadRadius: 1.0,
