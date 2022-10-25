@@ -50,6 +50,7 @@ class _AdminDashState extends State<AdminDash>{
     width: MediaQuery.of(context).size.width -300,
     height: MediaQuery.of(context).size.height-100,
       padding: EdgeInsets.only(left: 16,top: 25,right: 16),
+
       /**/
       child: Container(
         
@@ -130,7 +131,7 @@ class _AdminDashState extends State<AdminDash>{
                    width: 130.0,
                    height: 130.0,
                    child: Card (
-                    color: Color.fromARGB(255,55, 146, 55),
+                    color: Color(0xFF379237),
                     elevation: 2.0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0)
@@ -158,6 +159,73 @@ class _AdminDashState extends State<AdminDash>{
                         ) ),
                    ), 
                   ),
+                  SizedBox(
+                   width: 300.0,
+                   height: 130.0,
+                   child: Container (
+                    //color: Colors.orange,
+                    decoration:BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: 
+                      [Color(0xFF379237), AppColor.mainColor]),
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    //elevation: 2.0,
+                    // shape: RoundedRectangleBorder(
+                    //   borderRadius: BorderRadius.circular(8.0)
+                    //    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Image.asset("assets/images/student.png", width: 70.0,),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Hi Janani !',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height:20,),
+                            Text('Lets Finish your daily works.',
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                //fontWeight: FontWeight.bold,
+                              ),),
+                          ],
+                        )
+                      ],
+
+                    ),
+                      //  child: Center(
+                      //   child:Padding(
+                      //     padding: const EdgeInsets.all(8.0) ,
+                      //     child: Column(
+                      //       children: [
+                      //         Image.asset("assets/images/students.png", width: 55.0,),
+                      //         SizedBox(height: 10.0),
+                      //         Text("Students",style: TextStyle(
+                      //           color: Colors.white,
+                      //           fontWeight: FontWeight.bold,
+                      //           fontSize: 15.0
+                      //            ),),
+                      //            SizedBox(
+                      //             height: 5.0,
+                      //            ),
+                      //            Text("56 Students", style: TextStyle(
+                      //             color: Colors.white,
+                      //             fontWeight: FontWeight.w100
+                      //            )),
+                      //       ]),
+                      //   ) ),
+                   ), 
+                  ),
+                  
                     GestureDetector(
                 onTap: (){
                   Navigator.push(
@@ -175,7 +243,7 @@ class _AdminDashState extends State<AdminDash>{
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
-            color: Color.fromARGB(160, 157, 158, 158),
+            color: Color.fromARGB(160, 158, 158, 158),
             offset: Offset(4.0, 4.0),
             blurRadius: 15.0,
             spreadRadius: 1.0,
@@ -224,6 +292,7 @@ class _AdminDashState extends State<AdminDash>{
               )
           ],
         ),
+
         
         )
 
@@ -238,13 +307,15 @@ class _AdminDashState extends State<AdminDash>{
                 
               ),
               
-                  
-                ],
+                ]
               ),
               ),
               
           )
         ],
+
+        
+
        ),
       
    
