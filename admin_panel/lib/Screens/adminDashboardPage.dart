@@ -8,6 +8,7 @@ import 'addAdmin.dart';
 import 'addQuestions.dart';
 
 import '../Components/colors.dart';
+import 'dashboard.dart';
 
 var _page = 'Dashboard';
 
@@ -27,7 +28,7 @@ class _AdminDashPageState extends State<AdminDashPage> {
 
   LoadPage() {
     if (_page == 'Dashboard') {
-      return Container();
+      return AdminDash();
     }
     else if (_page == 'Add Admin') {
       return AddAdmin();
