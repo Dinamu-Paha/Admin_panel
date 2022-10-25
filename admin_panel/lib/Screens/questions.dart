@@ -3,6 +3,8 @@ import 'dart:html';
 import 'dart:js';
 import 'package:admin_panel/Components/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
 
 class Questions extends StatefulWidget {
   const Questions({Key? key}) : super(key: key);
@@ -14,14 +16,56 @@ class Questions extends StatefulWidget {
 class _QuestionsState extends State<Questions> {
 
   String dropdownvalue = 'සිංහල';
+  String dropdownvalue2 = "සත්තු" ;
 
-  List<String> items = <String>[
-    'සිංහල',
-    'ගණිතය',
-    'බුද්ධ ධර්මය',
-    'ඉංග්‍රීසි',
-    'පරිසරය',
-  ];
+  List<String> items = <String>[];
+  List<String> subTopics = <String>[];
+
+  List<String> subjects = <String>[];
+  int subjectIndex = 0;
+  int subjectId = 0;
+
+  Future <List<dynamic>> getSubjectsAndSubtopics() async{
+    final res = await http.get(Uri.parse('http://192.168.43.13:8080/subject/getsubjects'));
+    List<dynamic> responsejson = json.decode(utf8.decode(res.bodyBytes));
+    // print(responsejson);
+
+    if(subjects.isEmpty) {
+      for (var i = 0; i < responsejson.length; i++) {
+        subjects.add(responsejson[i]["subject"]);
+      }
+    }
+
+    return responsejson;
+  }
+
+  Future <List<dynamic>> getSubtopics() async{
+    print(subjectId);
+    final res = await http.get(Uri.parse('http://192.168.43.13:8080/subject/getsubtopic/'+subjectId.toString()));
+    List<dynamic> responsejson = json.decode(utf8.decode(res.bodyBytes));
+    if(subTopics.isEmpty) {
+      for (var i = 0; i < responsejson.length; i++) {
+        subTopics.add(responsejson[i]["sub_topic"]);
+      }
+
+    }
+    // dropdownvalue2 = responsejson[0]['sub_topic'];
+    // print(subTopics);
+    // print("responsejson");
+
+    return responsejson;
+  }
+
+
+
+
+  // Future getQuestionsForSubject(newValue) async{
+  //   final res = await http.get(
+  //       Uri.parse('http://192.168.43.13:8080/question/getquestionsofquiz/quiz1')
+  //     // headers: {'Content-Type': 'application/json'}
+  //   );
+  //   List<dynamic> responsejson = json.decode(utf8.decode(res.bodyBytes));
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -86,30 +130,60 @@ class _QuestionsState extends State<Questions> {
                               ),],
                           ),
 
-                          child: DropdownButtonHideUnderline(
-                            child: DropdownButton(
-                              // Initial Value
-                              value: dropdownvalue,
+                          child:
+                          FutureBuilder<List<dynamic>>(
+                            future: getSubjectsAndSubtopics(),
+                            builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot ){
+                                int? subjectLen = snapshot.data?.length;
 
-                              // Down Arrow Icon
-                              icon: const Icon(Icons.keyboard_arrow_down),
+                               // print(subjects);
+                              if(snapshot.hasData){
 
-                              // Array list of items
-                              items: items.map((String items) {
-                                return DropdownMenuItem(
-                                  value: items,
-                                  child: Text(items,),
+                                return DropdownButtonHideUnderline(
+                                  child: DropdownButton(
+                                    // Initial Value
+                                    value: dropdownvalue,
+
+                                    // Down Arrow Icon
+                                    icon: const Icon(Icons.keyboard_arrow_down),
+
+                                    // Array list of items
+                                    items: subjects.map((String items) {
+                                      // print(subjects);
+                                      return DropdownMenuItem(
+                                        value: items,
+                                        child: Text(items,),
+                                      );
+                                    }).toList(),
+
+                                    // After selecting the desired option,it will
+                                    // change button value to selected value
+                                    onChanged: (newValue) {
+                                      print(newValue);
+                                      print(subjects);
+                                      for(var i = 0 ; i < subjectLen! ; i++){
+                                        if(newValue == snapshot.data?[i]["subject"]){
+                                          subjectIndex = i;
+                                        }
+                                      }
+                                      int Id = snapshot.data?[subjectIndex]["subjectId"];
+                                      // print(subjectId);
+                                      setState(() {
+                                        subjectId = Id;
+                                        dropdownvalue = newValue!.toString();
+                                      });
+                                    },
+                                  ),
                                 );
-                              }).toList(),
-                              // After selecting the desired option,it will
-                              // change button value to selected value
-                              onChanged: (String? newValue) {
-                                setState(() {
-                                  dropdownvalue = newValue!;
-                                });
-                              },
-                            ),
-                          ),
+                              }
+                              else{
+                                return Container(
+                                  child: Text("Loading"),
+                                );
+                              }
+                            }
+                          )
+
                         ),
                         SizedBox(width: 92,),
                         Container(
@@ -136,32 +210,52 @@ class _QuestionsState extends State<Questions> {
                               ),],
                           ),
 
-                          child: DropdownButtonHideUnderline(
-                            child: DropdownButton(
-                              // Initial Value
-                              value: dropdownvalue,
+                          child:
+                          FutureBuilder<List<dynamic>>(
+                            future: getSubtopics(),
+                            builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot ){
+                              // int? subjectLen = snapshot.data?.length;
+                              // print(snapshot.data);
+                              // if(snapshot.data !=''){
+                              //   dropdownvalue2 = snapshot.data?[0]['sub_topic'] ?? 'සත්තු';
+                              // } else return Text('Loading');
+                                if(snapshot.hasData){
+                                  return DropdownButtonHideUnderline(
+                                          child: DropdownButton(
 
-                              // Down Arrow Icon
-                              icon: const Icon(Icons.keyboard_arrow_down),
+                                          // Down Arrow Icon
+                                          icon: const Icon(Icons.keyboard_arrow_down),
 
-                              // Array list of items
-                              items: items.map((String items) {
-                                return DropdownMenuItem(
-                                  value: items,
-                                  child: Text(items,),
-                                );
-                              }).toList(),
-                              // After selecting the desired option,it will
-                              // change button value to selected value
-                              onChanged: (String? newValue) {
-                                setState(() {
-                                  dropdownvalue = newValue!;
-                                });
-                              },
-                            ),
-                          ),
+                                          // Array list of items
+                                          items: subTopics.map((String items) {
+                                            print(items);
+                                            return DropdownMenuItem(
+                                                    value: items,
+                                                    child: Text(items,),
+                                            );
+                                            }).toList(),
+                                              // After selecting the desired option,it will
+                                              // change button value to selected value
+                                            onChanged: (newValue) {
+                                            setState(() {
+                                            dropdownvalue2 = newValue.toString();
+                                            });
+                                            },
+                                            // Initial Value
+                                            value: dropdownvalue2,
+                                          ),
+                                  );
+                                }
+                                else {
+                                  return Container(
+                                    child: Text("loading"),
+                                  );
+                                }
+
+                            }
                         ),
-                      ],
+                        ),
+            ]
                     ),
                     SizedBox(height: 20,),
                     Container(
@@ -188,7 +282,8 @@ class _QuestionsState extends State<Questions> {
                           ),],
                       ),
 
-                      child: DropdownButtonHideUnderline(
+                      child:
+                      DropdownButtonHideUnderline(
                         child: DropdownButton(
                           // Initial Value
                           value: dropdownvalue,
@@ -258,8 +353,20 @@ class _QuestionsState extends State<Questions> {
                               DataCell(Text('Arshik')),
                               DataCell(IconButton(onPressed: (){}, icon: Icon(Icons.edit)),),
                               DataCell(IconButton(onPressed: (){}, icon: Icon(Icons.delete)),),
-                            ])
-                          ]),
+                            ],
+
+                            ),
+                            DataRow(cells: [
+                              DataCell(Text('1')),
+                              DataCell(Text('Arshik')),
+                              DataCell(IconButton(onPressed: (){}, icon: Icon(Icons.edit)),),
+                              DataCell(IconButton(onPressed: (){}, icon: Icon(Icons.delete)),),
+                            ],
+
+                            )
+                          ],
+
+                      ),
                     ),
                     SizedBox(height: 40,),
                     GestureDetector(
