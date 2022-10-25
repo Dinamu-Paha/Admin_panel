@@ -235,6 +235,13 @@ class _AdminDashState extends State<AdminDash>{
                     ),
                       
                    ), 
+
+                  child: Center(
+
+                      child: Text("Questions", style: TextStyle(fontFamily: 'Poppins', fontSize: 40, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),)
+
+                      // child: Text("Students", style: TextStyle(fontFamily: 'Poppins', fontSize: 40, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),)
+
                   ),
                    
                   // SizedBox(

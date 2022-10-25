@@ -23,7 +23,7 @@ class _LessonsState extends State<Lessons>{
   //   Colors.lightGreenAccent.withOpacity(0.8)
   // ];
 
- 
+ //Assign names to subject variables
   var sub_name1 = "සිංහල";
   var sub_name2 = "ගණිතය";
   var sub_name3 = "ඉංග්‍රීසි";
@@ -44,6 +44,7 @@ class _LessonsState extends State<Lessons>{
   Widget build(BuildContext context){
      // TODO: implement build
      
+     //Admin menubar is incorporated here
      return Container(
 alignment: Alignment.center,
     
@@ -75,6 +76,7 @@ alignment: Alignment.center,
           )
         ]
       ),
+      //Added subject list
         child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Container(
