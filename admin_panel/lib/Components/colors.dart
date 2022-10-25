@@ -9,6 +9,8 @@ class AppColor{
   static Color whiteFont = Color(0xFFFFFFFF);
   static Color blackFont = Color(0xFF000000);
   static Color textBox = Color.fromARGB(0, 185, 253, 126);
+  static Color boxColor = Color.fromARGB(255, 240, 190, 228);
+  
 
 
 
