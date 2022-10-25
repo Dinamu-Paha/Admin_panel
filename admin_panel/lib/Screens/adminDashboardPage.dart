@@ -37,7 +37,7 @@ class _AdminDashPageState extends State<AdminDashPage> {
       return Questions();
     }
     else if (_page == 'Quizzers'){
-      return Create_Quiz();
+      return AddQuestions();
     }
     else if (_page == 'Lessons'){
       return Lessons();

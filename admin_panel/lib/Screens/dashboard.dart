@@ -74,11 +74,11 @@ GestureDetector(
                     border: Border.all(color: Colors.white,width: 2.0)
                   ),
                   child: Center(
-<<<<<<< HEAD
+
                       child: Text("Questions", style: TextStyle(fontFamily: 'Poppins', fontSize: 40, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),)
-=======
-                      child: Text("Students", style: TextStyle(fontFamily: 'Poppins', fontSize: 40, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),)
->>>>>>> 220570b67a3549ed5bc1acad1f3989841cb81c05
+
+                      // child: Text("Students", style: TextStyle(fontFamily: 'Poppins', fontSize: 40, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),)
+
                   ),
                 ),
               ),
