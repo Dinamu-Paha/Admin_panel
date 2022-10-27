@@ -77,89 +77,89 @@ alignment: Alignment.center,
         ]
       ),
       //Added subject list
-        // child: SingleChildScrollView(
-        //         scrollDirection: Axis.vertical,
-        //         child: Container(
-        //           width: MediaQuery.of(context).size.width-60,
-        //           height: MediaQuery.of(context).size.height,
-        //           child: Center(
-        //             child: ListView(
-        //               children: [
-        //                 SizedBox(height: 40,),
-        //                 GestureDetector(
-        //                   onTap: (){
-        //                     Navigator.push(
-        //                         context,
-        //                         MaterialPageRoute(
-        //                           builder: (BuildContext context) => SubTopic_UI(subject: sub_name1,),
-        //                         ));
-        //                   },
-        //                   child: Container(
-        //                     width: 80,
-        //                     height: 70,
-        //                     margin: EdgeInsets.fromLTRB(20, 0, 20, 30),
-        //                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.purpleAccent.withOpacity(0.8),),
-        //                     child: Center(child: Text('සිංහල', style: TextStyle(fontSize: 30),),),
-        //                   ),
-        //                 ),
-        //                 GestureDetector(
-        //                   child: Container(
-        //                     width: 80,
-        //                     height: 70,
-        //                     margin: EdgeInsets.fromLTRB(20, 0, 20, 30),
-        //                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.greenAccent.withOpacity(0.8),),
-        //                     child: Center(child: Text('ගණිතය', style: TextStyle(fontSize: 30),),),
-        //                   ),
-        //                 ),
+        child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Container(
+                  width: MediaQuery.of(context).size.width-60,
+                  height: MediaQuery.of(context).size.height,
+                  child: Center(
+                    child: ListView(
+                      children: [
+                        SizedBox(height: 40,),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) => SubTopic_UI(subject: sub_name1,),
+                                ));
+                          },
+                          child: Container(
+                            width: 80,
+                            height: 70,
+                            margin: EdgeInsets.fromLTRB(20, 0, 20, 30),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.purpleAccent.withOpacity(0.8),),
+                            child: Center(child: Text('සිංහල', style: TextStyle(fontSize: 30),),),
+                          ),
+                        ),
+                        GestureDetector(
+                          child: Container(
+                            width: 80,
+                            height: 70,
+                            margin: EdgeInsets.fromLTRB(20, 0, 20, 30),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.greenAccent.withOpacity(0.8),),
+                            child: Center(child: Text('ගණිතය', style: TextStyle(fontSize: 30),),),
+                          ),
+                        ),
 
-        //                 GestureDetector(
-        //                   child: Container(
-        //                     width: 80,
-        //                     height: 70,
-        //                     margin: EdgeInsets.fromLTRB(20, 0, 20, 30),
-        //                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.lightBlue.withOpacity(0.8),),
-        //                     child: Center(child: Text('ඉංග්‍රීසි', style: TextStyle(fontSize: 30),),),
-        //                   ),
-        //                 ),
-        //                 GestureDetector(
-        //                   onTap: (){
-        //                     Navigator.push(
-        //                         context,
-        //                         MaterialPageRoute(
-        //                           builder: (BuildContext context) => SubTopic_UI(subject:sub_name4),
-        //                         ));
-        //                   },
-        //                   child: Container(
-        //                     width: 80,
-        //                     height: 70,
-        //                     margin: EdgeInsets.fromLTRB(20, 0, 20, 30),
-        //                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.lightGreenAccent.withOpacity(0.8),),
-        //                     child: Center(child: Text('පරිසරය', style: TextStyle(fontSize: 30),),),
-        //                   ),
-        //                 ),
-        //                 GestureDetector(
-        //                   onTap: (){
-        //                     Navigator.push(
-        //                         context,
-        //                         MaterialPageRoute(
-        //                           builder: (BuildContext context) => SubTopic_UI(subject:sub_name4),
-        //                         ));
-        //                   },
-        //                   child: Container(
-        //                     width: 80,
-        //                     height: 70,
-        //                     margin: EdgeInsets.fromLTRB(20, 0, 20, 30),
-        //                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.orangeAccent.withOpacity(0.8),),
-        //                     child: Center(child: Text('බුද්ධ ධර්මය', style: TextStyle(fontSize: 30),),),
-        //                   ),
-        //                 ),
+                        GestureDetector(
+                          child: Container(
+                            width: 80,
+                            height: 70,
+                            margin: EdgeInsets.fromLTRB(20, 0, 20, 30),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.lightBlue.withOpacity(0.8),),
+                            child: Center(child: Text('ඉංග්‍රීසි', style: TextStyle(fontSize: 30),),),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) => SubTopic_UI(subject:sub_name4),
+                                ));
+                          },
+                          child: Container(
+                            width: 80,
+                            height: 70,
+                            margin: EdgeInsets.fromLTRB(20, 0, 20, 30),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.lightGreenAccent.withOpacity(0.8),),
+                            child: Center(child: Text('පරිසරය', style: TextStyle(fontSize: 30),),),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) => SubTopic_UI(subject:sub_name4),
+                                ));
+                          },
+                          child: Container(
+                            width: 80,
+                            height: 70,
+                            margin: EdgeInsets.fromLTRB(20, 0, 20, 30),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.orangeAccent.withOpacity(0.8),),
+                            child: Center(child: Text('බුද්ධ ධර්මය', style: TextStyle(fontSize: 30),),),
+                          ),
+                        ),
                         
-        //                 SizedBox(height: 100,),
-        //               ],
-        //             ),
-        //           ),
-        //         ),
-        //       ),
+                        SizedBox(height: 100,),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ),
      );
         

@@ -152,77 +152,77 @@ alignment: Alignment.center,
                               ],
                             ),
                           ),
-                          GestureDetector(
-                            child: Container(
-                              width: 80,
-                              height: 50,
-                              margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.greenAccent.withOpacity(0.8),),
-                              child: Center(child: Text('අපේ යහපැවැත්ම', style: TextStyle(fontSize: 25),),),
-                            ),
-                          ),
-                          GestureDetector(
-                            child: Container(
-                              width: 80,
-                              height: 50,
-                              margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.blue.withOpacity(0.8),),
-                              child: Center(child: Text('පොලොව හා අහස', style: TextStyle(fontSize: 25),),),
-                            ),
-                          ),
-                          GestureDetector(
-                            child: Container(
-                              width: 80,
-                              height: 50,
-                              margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.lightGreenAccent.withOpacity(0.8),),
-                              child: Center(child: Text('අප හා වෙළඳ පොළ', style: TextStyle(fontSize: 25),),),
-                            ),
-                          ),
-                          GestureDetector(
-                            child: Container(
-                              width: 80,
-                              height: 50,
-                              margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.orange.withOpacity(0.8),),
-                              child: Center(child: Text('පැලෑටි හා ගස්වැල්', style: TextStyle(fontSize: 25),),),
-                            ),
-                          ),
-                          GestureDetector(
-                            child: Container(
-                              width: 80,
-                              height: 50,
-                              margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.pinkAccent.withOpacity(0.8),),
-                              child: Center(child: Text('අපි ලක් වැසියෝ', style: TextStyle(fontSize: 25),),),
-                            ),
-                          ),
-                          GestureDetector(
-                            child: Container(
-                              width: 80,
-                              height: 50,
-                              margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.deepOrangeAccent.withOpacity(0.8),),
-                              child: Center(child: Text('අප පරිහරණය කරන දේ', style: TextStyle(fontSize: 25),),),
-                            ),
-                          ),
-                          GestureDetector(
-                            child: Container(
-                              width: 80,
-                              height: 50,
-                              margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.green.withOpacity(0.8),),
-                              child: Center(child: Text('අපේ ආහාර', style: TextStyle(fontSize: 25),),),
-                            ),
-                          ),
-                          GestureDetector(
-                            child: Container(
-                              width: 80,
-                              height: 50,
-                              margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.yellowAccent.withOpacity(0.8),),
-                              child: Center(child: Text('ආරක්ෂාව හා පරිස්සම', style: TextStyle(fontSize: 25),),),
-                            ),
+                          // GestureDetector(
+                          //   child: Container(
+                          //     width: 80,
+                          //     height: 50,
+                          //     margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
+                          //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.greenAccent.withOpacity(0.8),),
+                          //     child: Center(child: Text('අපේ යහපැවැත්ම', style: TextStyle(fontSize: 25),),),
+                          //   ),
+                          // ),
+                          // GestureDetector(
+                          //   child: Container(
+                          //     width: 80,
+                          //     height: 50,
+                          //     margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
+                          //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.blue.withOpacity(0.8),),
+                          //     child: Center(child: Text('පොලොව හා අහස', style: TextStyle(fontSize: 25),),),
+                          //   ),
+                          // ),
+                          // GestureDetector(
+                          //   child: Container(
+                          //     width: 80,
+                          //     height: 50,
+                          //     margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
+                          //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.lightGreenAccent.withOpacity(0.8),),
+                          //     child: Center(child: Text('අප හා වෙළඳ පොළ', style: TextStyle(fontSize: 25),),),
+                          //   ),
+                          // ),
+                          // GestureDetector(
+                          //   child: Container(
+                          //     width: 80,
+                          //     height: 50,
+                          //     margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
+                          //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.orange.withOpacity(0.8),),
+                          //     child: Center(child: Text('පැලෑටි හා ගස්වැල්', style: TextStyle(fontSize: 25),),),
+                          //   ),
+                          // ),
+                          // GestureDetector(
+                          //   child: Container(
+                          //     width: 80,
+                          //     height: 50,
+                          //     margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
+                          //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.pinkAccent.withOpacity(0.8),),
+                          //     child: Center(child: Text('අපි ලක් වැසියෝ', style: TextStyle(fontSize: 25),),),
+                          //   ),
+                          // ),
+                          // GestureDetector(
+                          //   child: Container(
+                          //     width: 80,
+                          //     height: 50,
+                          //     margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
+                          //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.deepOrangeAccent.withOpacity(0.8),),
+                          //     child: Center(child: Text('අප පරිහරණය කරන දේ', style: TextStyle(fontSize: 25),),),
+                          //   ),
+                          // ),
+                          // GestureDetector(
+                          //   child: Container(
+                          //     width: 80,
+                          //     height: 50,
+                          //     margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
+                          //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.green.withOpacity(0.8),),
+                          //     child: Center(child: Text('අපේ ආහාර', style: TextStyle(fontSize: 25),),),
+                          //   ),
+                          // ),
+                          // GestureDetector(
+                          //   child: Container(
+                          //     width: 80,
+                          //     height: 50,
+                          //     margin: EdgeInsets.fromLTRB(150, 0, 150, 30),
+                          //     decoration: BoxDecoration(borderRadius: BorderRadius.circular(25), color: Colors.yellowAccent.withOpacity(0.8),),
+                          //     child: Center(child: Text('ආරක්ෂාව හා පරිස්සම', style: TextStyle(fontSize: 25),),),
+                          //   ),
                           ),
                         ],
                       ),
