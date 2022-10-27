@@ -4,6 +4,7 @@ import 'dart:js';
 import 'package:admin_panel/Components/colors.dart';
 import 'package:flutter/material.dart';
 
+//Creating quizes
 class Create_Quiz extends StatefulWidget {
   const Create_Quiz({Key? key}) : super(key: key);
 
