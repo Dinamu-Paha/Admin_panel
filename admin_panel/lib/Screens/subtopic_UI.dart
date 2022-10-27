@@ -151,7 +151,7 @@ alignment: Alignment.center,
                                 
                               ],
                             ),
-                          ),
+                          ),//Added Gesture Detector
                           GestureDetector(
                             child: Container(
                               width: 80,
